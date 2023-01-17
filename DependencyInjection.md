@@ -39,17 +39,17 @@
 ### Hilt Application Class
 * All apps that use Hilt must contant an Application class that is annotated with **@HiltAndroidApp**
   
-> @HiltAndroidApp
+>       @HiltAndroidApp
 > 
-> public class ExampleApplication extends Application { ... }
+>       public class ExampleApplication extends Application { ... }
 >
 
 ### Inject dependencies into Android classes
 * Once Hilt is setup in the **Application** class and an application level component is available, Hilt can provide dependencies to other Android classes that have the **@AndroidEntryPoint** annotation:
 
-> @AndroidEntryPoint
+>       @AndroidEntryPoint
 >
-> public class ExmapleActivity extends AppCompatActivity{ ... }
+>       public class ExmapleActivity extends AppCompatActivity{ ... }
 >
 
 * Hilt currently supports the following Android classes:
@@ -64,33 +64,33 @@
 * If you annotate an Android class with **@AndroidEntryPoint**, then you also must annotate Android classes that depend on it. For instance, if you annotate a fragment, then you must also annotate any activities where you use that fragment.
 
 * To obtain dependencies from a component, use the **@Inject** annotation to perform field injection:
-  > @AndroidEntryPoint
+  >         @AndroidEntryPoint
   > 
-  > public class ExampleActivity extends AppCompatActivity {
+  >         public class ExampleActivity extends AppCompatActivity {
   >
-  >     @Inject
-  >     AnalyticsAdapter analytics;
+  >             @Inject
+  >             AnalyticsAdapter analytics;
   > 
-  > ...
+  >             ...
   > 
-  > }
+  >         }
 * This tells the Hilt that an AnalyticsAdapter will be field injected by the bindings/provides in Hilt's **@Module**.
 
 ### Hilt Dagger Modules
 * Dagger module is a class that is annotated with **@Module**, this module tells Dagger how to provide an instance of a class:
 
-> @Module
+>       @Module
 > 
-> public class NetworkModule {
+>       public class NetworkModule {
 > 
->       @Provides
->       public LoginRetrofitService provideLoginRetrofitService() {
+>            @Provides
+>            public LoginRetrofitService provideLoginRetrofitService() {
 >   
->           return new RetrofitBuilder().baseUrl("https://example.com").build().create(LoginService.class);
+>                   return new RetrofitBuilder().baseUrl("https://example.com").build().create(LoginService.class);
+> 
+>               }
 > 
 >       }
-> 
-> }
 
 
 
