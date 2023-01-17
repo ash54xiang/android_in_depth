@@ -47,9 +47,9 @@ public class IniToJson {
         System.out.println("Map: " + _entries);
     }
 
-    // public JSONObject convertToJson() {
-    // return new JSONObject(_entries);
-    // }
+    public JSONObject convertToJson() {
+        return new JSONObject(_entries);
+    }
 
     // public String getString(String section, String key, String defaultvalue) {
     // Map<String, String> kv = _entries.get(section);
@@ -87,8 +87,8 @@ public class IniToJson {
         System.out.println("In Main: -----------------");
         IniToJson iniToJson = new IniToJson("C:\\src\\projects\\android_in_depth\\config.properties");
         System.out.println("End" + iniToJson);
-        // System.out.println("Convert map to json: ------------");
-        // JSONObject _json = iniToJson.convertToJson();
-        // System.out.println("JSON Object: " + _json);
+        System.out.println("Convert map to json: ------------");
+        JSONObject _json = iniToJson.convertToJson();
+        System.out.println("JSON Object: " + _json);
     }
 }
