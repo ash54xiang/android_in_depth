@@ -23,4 +23,12 @@ public class AppViewModel extends ViewModel {
         String appName = getAppFromDatabase().getAppName();
         mutableLiveData.setValue(appName);
     }
+    public void getAppDownloads() {
+        int appDownloads = getAppFromDatabase().getAppDownloads();
+        mutableLiveData.setValue(String.valueOf(appDownloads));
+    }
+    public void getAppRating() {
+        int appRating = getAppFromDatabase().getAppRating();
+        mutableLiveData.setValue(String.valueOf(appRating));
+    }
 }
