@@ -23,4 +23,18 @@
 ## MVVM (Model-View-ViewModel)
 * Model - data that we needs to retrieve
 * View - UI to display
-* View-Model - view binds to a VM, VM responsible to do logic based on view requests and get it from model.
+* View-Model - view binds to a VM, VM responsible to do logic based on view requests and get it from model. It provides the data streams to the View, and View observes from the stream.
+* reference: https://www.digitalocean.com/community/tutorials/android-mvvm-design-pattern
+
+## Difference between MVVM and MVP
+1. Presenter holds references to the View but ViewModel doesn't
+2. Presenter updates the View using classical way by triggering methods but ViewModel sends data stream instead
+3. Presenter and View are in a One-to-One relationship
+4. ViewModel and View are in a Many-to-One relationship
+5. ViewModel does not know that View is listening to it.
+
+## 3 Ways to implement ViewModel
+1. Using two way data binding
+2. Using Live Data
+3. Using RxJava
+
